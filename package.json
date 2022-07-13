@@ -1,0 +1,16 @@
+{
+  "name": "comics",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "snowpack dev"
+  },
+  "author": "Daniel Beeke",
+  "license": "ISC",
+  "dependencies": {
+    "interactjs": "^1.10.17",
+    "uhtml": "^3.0.1",
+    "ustyler": "^1.0.1"
+  }
+}

@@ -1,0 +1,64 @@
+comic-frame {
+  --side-width: 2;
+  background-image: var(--src);
+  grid-column: var(--inline-start) / var(--inline-end);
+  grid-row: var(--block-start) / var(--block-end);
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  box-shadow: 0 0 0 var(--size) white;
+  transition: opacity .3s ease-in-out;
+}
+
+.corner {
+  position: absolute;
+  width: calc(var(--size) * var(--side-width));
+  height: calc(var(--size) * var(--side-width));
+  background: black;
+}
+
+.corner.inline-start { left: 0; }
+.corner.inline-end { right: 0; }
+.corner.block-start { top: 0; }
+.corner.block-end { bottom: 0; }
+
+.corner.inline-start.block-start,
+.corner.inline-end.block-end { cursor: nwse-resize; }
+
+.corner.inline-end.block-start,
+.corner.inline-start.block-end { cursor: nesw-resize; }
+
+.side {
+  position: absolute;
+  background: red;
+}
+
+.side.inline {
+  cursor: ew-resize;
+  width: calc(var(--size) * var(--side-width));
+  height: calc(100% - var(--size) * var(--side-width) * 2);
+}
+
+.side.inline.start {
+  top: calc(var(--size) * var(--side-width));
+}
+
+.side.inline.end {
+  right: 0;
+  bottom: calc(var(--size) * var(--side-width));
+}
+
+.side.block {
+  cursor: ns-resize;
+  height: calc(var(--size) * var(--side-width));
+  width: calc(100% - var(--size) * var(--side-width) * 2);
+}
+
+.side.block.start {
+  left: calc(var(--size) * var(--side-width));
+}
+
+.side.block.end {
+  right: calc(var(--size) * var(--side-width));
+  bottom: 0;
+}
